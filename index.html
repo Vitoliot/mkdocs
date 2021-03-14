@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>vitoliot_market</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">vitoliot_market</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#welcome-to-vitoliot_market" class="nav-link">Welcome to vitoliot_market</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#firm" class="nav-link">Firm</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#product" class="nav-link">Product</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#contract_fp" class="nav-link">Contract_FP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#batch" class="nav-link">Batch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#batch-content" class="nav-link">Batch content</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#office" class="nav-link">Office</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#broker" class="nav-link">Broker</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#contract_bo" class="nav-link">Contract_BO</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#customer" class="nav-link">Customer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#contract_bcb" class="nav-link">Contract_BCB</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="welcome-to-vitoliot_market">Welcome to vitoliot_market</h1>
+<p>Enjoy the doc!</p>
+<h2 id="firm"><strong>Firm</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idfirm</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>name_firm</td>
+<td>character(25)</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>specialization_firm</td>
+<td>character(25)</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes"><strong>Indexes</strong>:</h3>
+<pre><code>"firm_pkey" PRIMARY KEY, btree (idfirm)
+</code></pre>
+<h3 id="references"><strong>References</strong>:</h3>
+<pre><code>TABLE "contract_fp" CONSTRAINT "contract_fp_iffirm_fkey" FOREIGN KEY (idfirm) REFERENCES firm(idfirm) ON DELETE CASCADE
+</code></pre>
+<h2 id="product"><strong>Product</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idproduct</td>
+<td>integeTr</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>name_product</td>
+<td>character(25)</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>shelf_life</td>
+<td>date</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>unit</td>
+<td>character(10)</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>price</td>
+<td>integer</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>date_of_production</td>
+<td>date</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>date_of_shipment</td>
+<td>date</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_1"><strong>Indexes</strong>:</h3>
+<pre><code>"product_pkey" PRIMARY KEY, btree (ifproduct)
+</code></pre>
+<h3 id="references_1"><strong>References</strong>:</h3>
+<pre><code>TABLE "batch_content" CONSTRAINT "batch_content_idproduct_fkey" FOREIGN KEY (idproduct) REFERENCES product(ifproduct) ON DELETE CASCADE
+TABLE "contract_fp" CONSTRAINT "contract_fp_idproduct_fkey" FOREIGN KEY (idproduct) REFERENCES product(ifproduct) ON DELETE CASCADE
+</code></pre>
+<h2 id="contract_fp">Contract_FP</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idproduct</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>idfirm</td>
+<td>integer</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>date_of_contract</td>
+<td>date</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="constraints"><strong>Constraints</strong>:</h3>
+<pre><code>"contract_fp_idproduct_fkey" FOREIGN KEY (idproduct) REFERENCES product(ifproduct) ON DELETE CASCADE
+"contract_fp_iffirm_fkey" FOREIGN KEY (idfirm) REFERENCES firm(idfirm) ON DELETE CASCADE
+</code></pre>
+<h2 id="batch">Batch</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idbatch</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>name_batch</td>
+<td>character(10)</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>amount_of_product</td>
+<td>text</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>price_batch</td>
+<td>integer</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_2"><strong>Indexes</strong>:</h3>
+<pre><code>"batch_pkey" PRIMARY KEY, btree (idbatch)
+</code></pre>
+<h3 id="references_2"><strong>References</strong>:</h3>
+<pre><code>TABLE "batch_content" CONSTRAINT "batch_content_idbatch_fkey" FOREIGN KEY (idbatch) REFERENCES batch(idbatch) ON DELETE CASCADE
+TABLE "contract_bcb" CONSTRAINT "contract_bcb_idbatch_fkey" FOREIGN KEY (idbatch) REFERENCES batch(idbatch) ON DELETE CASCADE
+</code></pre>
+<h2 id="batch-content">Batch content</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idbatch</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>idproduct</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>date_of_receipt</td>
+<td>date</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="constraints_1"><strong>Constraints</strong>:</h3>
+<pre><code>"batch_content_idbatch_fkey" FOREIGN KEY (idbatch) REFERENCES batch(idbatch) ON DELETE CASCADE
+"batch_content_idproduct_fkey" FOREIGN KEY (idproduct) REFERENCES product(ifproduct) ON DELETE CASCADE
+</code></pre>
+<h2 id="office">Office</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idoffice</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>name_office</td>
+<td>character(25)</td>
+<td align="center">Fakse</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_3"><strong>Indexes</strong>:</h3>
+<pre><code>"office_pkey" PRIMARY KEY, btree (idoffice)
+</code></pre>
+<h3 id="references_3"><strong>References</strong>:</h3>
+<pre><code>TABLE "contract_bo" CONSTRAINT "contract_bo_idoffice_fkey" FOREIGN KEY (idoffice) REFERENCES office(idoffice) ON DELETE CASCADE
+</code></pre>
+<h2 id="broker">Broker</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idbroker</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>name_broker</td>
+<td>character(30)</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>succsess_percent</td>
+<td>integer</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>work_experience</td>
+<td>integer</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_4"><strong>Indexes</strong>:</h3>
+<pre><code>"broker_pkey" PRIMARY KEY, btree (idbroker)
+</code></pre>
+<h3 id="references_4"><strong>References</strong>:</h3>
+<pre><code>TABLE "contract_bcb" CONSTRAINT "contract_bcb_idbroker_fkey" FOREIGN KEY (idbroker) REFERENCES broker(idbroker) ON DELETE CASCADE
+TABLE "contract_bo" CONSTRAINT "contract_bo_idbroker_fkey" FOREIGN KEY (idbroker) REFERENCES broker(idbroker) ON DELETE CASCADE
+</code></pre>
+<h2 id="contract_bo">Contract_BO</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idcontract_bo</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>idoffice</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>idbroker</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>office_percent</td>
+<td>integer</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>salary</td>
+<td>integer</td>
+<td align="center">False</td>
+</tr>
+<tr>
+<td>date_of_duration</td>
+<td>date</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_5"><strong>Indexes</strong>:</h3>
+<pre><code>"contract_bo_pkey" PRIMARY KEY, btree (idcontract_bo)
+</code></pre>
+<h3 id="constraints_2"><strong>Constraints</strong>:</h3>
+<pre><code>"contract_bo_idbroker_fkey" FOREIGN KEY (idbroker) REFERENCES broker(idbroker) ON DELETE CASCADE
+"contract_bo_idoffice_fkey" FOREIGN KEY (idoffice) REFERENCES office(idoffice) ON DELETE CASCADE
+</code></pre>
+<h2 id="customer">Customer</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idcustomer</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>name_customer</td>
+<td>character(30)</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="indexes_6"><strong>Indexes</strong>:</h3>
+<pre><code>"customer_pkey" PRIMARY KEY, btree (idcustomer)
+</code></pre>
+<h3 id="references_5"><strong>References</strong>:</h3>
+<pre><code>TABLE "contract_bcb" CONSTRAINT "contract_bcb_idcustomer_fkey" FOREIGN KEY (idcustomer) REFERENCES customer(idcustomer) ON DELETE CASCADE
+</code></pre>
+<h2 id="contract_bcb"><strong>Contract_BCB</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th align="center">PK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idbroker</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>idcustomer</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>idbatch</td>
+<td>integer</td>
+<td align="center">True</td>
+</tr>
+<tr>
+<td>date_of_conclusion</td>
+<td>date</td>
+<td align="center">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="constraints_3"><strong>Constraints</strong>:</h3>
+<pre><code>"contract_bcb_idbatch_fkey" FOREIGN KEY (idbatch) REFERENCES batch(idbatch) ON DELETE CASCADE
+"contract_bcb_idbroker_fkey" FOREIGN KEY (idbroker) REFERENCES broker(idbroker) ON DELETE CASCADE
+"contract_bcb_idcustomer_fkey" FOREIGN KEY (idcustomer) REFERENCES customer(idcustomer) ON DELETE CASCADE
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2021-03-14 00:13:02.102037+00:00
+-->
