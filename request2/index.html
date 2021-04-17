@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Request 2 - vitoliot_market</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Request 2", url: "#_top", children: [
+              {title: "Score - 8", url: "#score-8" },
+              {title: "Description", url: "#description" },
+              {title: "Result", url: "#result" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../request3/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../request3/" class="btn btn-xs btn-link">
+        Request 3
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../request1/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../request1/" class="btn btn-xs btn-link">
+        Request 1
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="request-2">Request 2</h1>
+<pre><code class="language-sql">select name_broker from broker where ASCII(name_broker) between 68 and 81  
+union all
+select name_customer from customer where ASCII(name_customer) between 68 and 81
+order by name_broker;
+</code></pre>
+<h2 id="score-8">Score - 8</h2>
+<h2 id="description">Description</h2>
+<pre><code>сортированный по имени брокера вывод объединения всех имен брокеров и имён 
+покупателей,  первый символ которых находится в интервале букв (B; Q)
+</code></pre>
+<h2 id="result">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">name_broker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Don Juan</td>
+</tr>
+<tr>
+<td align="center">IGIL(banned in Russia)</td>
+</tr>
+<tr>
+<td align="center">Jordan Belfort</td>
+</tr>
+<tr>
+<td align="center">Nothing Nothing Nothing</td>
+</tr>
+<tr>
+<td align="center">Panayot Viktor</td>
+</tr>
+</tbody>
+</table>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../request3/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../request3/" class="btn btn-xs btn-link">
+        Request 3
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../request1/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../request1/" class="btn btn-xs btn-link">
+        Request 1
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="">Windmill Dark</a> theme by None (noraj).</p>
+</footer>
+
+</body>
+</html>

@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>All requests - vitoliot_market</title>
+    <title>Request 10 - vitoliot_market</title>
     <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -32,7 +32,10 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "All requests", url: "#_top", children: [
+          {title: "Request 10", url: "#_top", children: [
+              {title: "Score - 3", url: "#score-3" },
+              {title: "Description", url: "#description" },
+              {title: "Result", url: "#result" },
           ]},
         ];
 
@@ -53,77 +56,68 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     
+    
+      
+    
 
-    <h1 id="all-requests">All requests</h1>
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../request9/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../request9/" class="btn btn-xs btn-link">
+        Request 9
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="request-10">Request 10</h1>
+<pre><code class="language-sql">select name_batch from batch
+where ASCII(name_batch) = 49 and price_batch &gt; 1000;
+</code></pre>
+<h2 id="score-3">Score - 3</h2>
+<h2 id="description">Description</h2>
+<pre><code>Вывод номеров партий, начинающихся на 1 и стоящих более 1000
+</code></pre>
+<h2 id="result">Result</h2>
 <table>
 <thead>
 <tr>
-<th align="center">#</th>
-<th align="left">Request</th>
-<th align="center">Score</th>
+<th align="center">name_batch</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">1</td>
-<td align="left"><img alt="Pict. 1" src="../1.png" /></td>
-<td align="center">8</td>
+<td align="center">100100221</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="left"><img alt="Pict. 2" src="../2.png" /></td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="left"><img alt="Pict. 3" src="../3.png" /></td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">4</td>
-<td align="left"><img alt="Pict. 4" src="../4.png" /></td>
-<td align="center">6</td>
-</tr>
-<tr>
-<td align="center">5</td>
-<td align="left"><img alt="Pict. 5" src="../5.png" /></td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">6</td>
-<td align="left"><img alt="Pict. 6" src="../6.png" /></td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">7</td>
-<td align="left"><img alt="Pict. 7" src="../7.png" /></td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">8</td>
-<td align="left"><img alt="Pict. 8" src="../8.png" /></td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="left"><img alt="Pict. 9" src="../9.png" /></td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">10</td>
-<td align="left"><img alt="Pict. 10" src="../10.png" /></td>
-<td align="center">3</td>
-</tr>
-<tr>
-<td align="center"># Final score - 45</td>
-<td align="left"></td>
-<td align="center"></td>
+<td align="center">100100222</td>
 </tr>
 </tbody>
 </table>
 
   <br>
     
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../request9/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../request9/" class="btn btn-xs btn-link">
+        Request 9
+      </a>
+    </div>
+    
+  </div>
 
     <br>
 </div>
