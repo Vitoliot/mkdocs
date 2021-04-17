@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Requests - vitoliot_market</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Request 1", url: "#_top", children: [
+              {title: "Score - 8", url: "#score-8" },
+              {title: "Description", url: "#description" },
+              {title: "Result", url: "#result" },
+          ]},
+          {title: "Request 2", url: "#request-2", children: [
+              {title: "Score - 8", url: "#score-8_1" },
+              {title: "Description", url: "#description_1" },
+              {title: "Result", url: "#result_1" },
+          ]},
+          {title: "Request 3", url: "#request-3", children: [
+              {title: "Score - 4", url: "#score-4" },
+              {title: "Description", url: "#description_2" },
+              {title: "Result", url: "#result_2" },
+          ]},
+          {title: "Request 4", url: "#request-4", children: [
+              {title: "Score - 6", url: "#score-6" },
+              {title: "Description", url: "#description_3" },
+              {title: "Result", url: "#result_3" },
+          ]},
+          {title: "Request 5", url: "#request-5", children: [
+              {title: "Score - 4", url: "#score-4_1" },
+              {title: "Description", url: "#description_4" },
+              {title: "Result", url: "#result_4" },
+          ]},
+          {title: "Request 6", url: "#request-6", children: [
+              {title: "Score - 2", url: "#score-2" },
+              {title: "Description", url: "#description_5" },
+              {title: "Result", url: "#result_5" },
+          ]},
+          {title: "Request 7", url: "#request-7", children: [
+              {title: "Score - 4", url: "#score-4_2" },
+              {title: "Description", url: "#description_6" },
+              {title: "Result", url: "#result_6" },
+          ]},
+          {title: "Request 8", url: "#request-8", children: [
+              {title: "Score - 2", url: "#score-2_1" },
+              {title: "Description", url: "#description_7" },
+              {title: "Result", url: "#result_7" },
+          ]},
+          {title: "Request 9", url: "#request-9", children: [
+              {title: "Score - 4", url: "#score-4_3" },
+              {title: "Description", url: "#description_8" },
+              {title: "Result", url: "#result_8" },
+          ]},
+          {title: "Request 10", url: "#request-10", children: [
+              {title: "Score - 3", url: "#score-3" },
+              {title: "Description", url: "#description_9" },
+              {title: "Result", url: "#result_9" },
+          ]},
+          {title: "Final score - 45", url: "#final-score-45", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../product/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../product/" class="btn btn-xs btn-link">
+        product
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="request-1">Request 1</h1>
+<pre><code class="language-sql">select idcustomer, name_customer, idbroker, name_broker, date_of_conclusion from public.customer
+natural join public.contract_bcb
+natural join public.broker
+where exists (select * from public.contract_bcb where idcustomer = idbroker and date_of_conclusion &lt; '2021-04-17')
+order by name_customer;
+</code></pre>
+<h2 id="score-8">Score - 8</h2>
+<h2 id="description">Description</h2>
+<pre><code>Cортированный по имени покупателя вывод всех покупателей и брокеров с одинаковым id, 
+у которых существует между собой хотя бы одна сделка датированная ранее 17-04-2021
+</code></pre>
+<h2 id="result">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">idcustomer</th>
+<th align="center">name_customer</th>
+<th align="center">idbroker</th>
+<th align="center">name_broker</th>
+<th align="center">date_of_conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2</td>
+<td align="center">IGIL(banned in Russia)</td>
+<td align="center">2</td>
+<td align="center">Don Juan</td>
+<td align="center">2021-03-20</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">Nothing Nothing Nothing</td>
+<td align="center">3</td>
+<td align="center">Uncle Pihto</td>
+<td align="center">2021-10-10</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">Panayot Viktor</td>
+<td align="center">1</td>
+<td align="center">Jordan Belfort</td>
+<td align="center">2021-02-10</td>
+</tr>
+</tbody>
+</table>
+<h1 id="request-2">Request 2</h1>
+<pre><code class="language-sql">select name_broker from broker where ASCII(name_broker) between 68 and 81  
+union all
+select name_customer from customer where ASCII(name_customer) between 68 and 81
+order by name_broker;
+</code></pre>
+<h2 id="score-8_1">Score - 8</h2>
+<h2 id="description_1">Description</h2>
+<pre><code>сортированный по имени брокера вывод объединения всех имен брокеров и имён 
+покупателей,  первый символ которых находится в интервале букв (B; Q)
+</code></pre>
+<h2 id="result_1">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">name_broker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Don Juan</td>
+</tr>
+<tr>
+<td align="center">IGIL(banned in Russia)</td>
+</tr>
+<tr>
+<td align="center">Jordan Belfort</td>
+</tr>
+<tr>
+<td align="center">Nothing Nothing Nothing</td>
+</tr>
+<tr>
+<td align="center">Panayot Viktor</td>
+</tr>
+</tbody>
+</table>
+<h1 id="request-3">Request 3</h1>
+<pre><code class="language-sql">select idbroker, name_broker from broker
+natural join contract_bo
+natural join office
+where name_office = 'brothers Brazzers' and work_experience &lt;= 5
+order by idbroker;
+</code></pre>
+<h2 id="score-4">Score - 4</h2>
+<h2 id="description_2">Description</h2>
+<pre><code>Вывод брокеров из заданной компании с опытом работы &lt;= 5-ти год., 
+сортированный по id брокера
+</code></pre>
+<h2 id="result_2">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">idbroker</th>
+<th align="center">name_broker</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2</td>
+<td align="center">Don Juan</td>
+</tr>
+</tbody>
+</table>
+<h1 id="request-4">Request 4</h1>
+<pre><code class="language-sql">select work_experience, SUM(salary) from contract_bo
+natural join broker
+group by work_experience having work_experience &gt; 2
+order by work_experience;
+</code></pre>
+<h2 id="score-6">Score - 6</h2>
+<h2 id="description_3">Description</h2>
+<pre><code>Вывод суммы зарплат работников по их  опыту работы (если он больше двух) и сортировка по ид брокера
+</code></pre>
+<h2 id="result_3">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">work_experience</th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">5</td>
+<td align="center">10000000</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">10000</td>
+</tr>
+<tr>
+<td align="center">60</td>
+<td align="center">20000</td>
+</tr>
+</tbody>
+</table>
+<h1 id="request-5">Request 5</h1>
+<pre><code class="language-sql">select ifproduct, name_product from product 
+where (select EXTRACT(YEAR FROM date_of_production) = 2021);
+</code></pre>
+<h2 id="score-4_1">Score - 4</h2>
+<h2 id="description_4">Description</h2>
+<pre><code>Вывод товаров, произведённых в 2021 году
+</code></pre>
+<h2 id="result_4">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">ifproduct</th>
+<th align="center">name_product</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+<td align="center">Acer Aspire 515-50</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">NIN chokos</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">Shipe-1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="request-6">Request 6</h1>
+<pre><code class="language-sql">select name_product, LENGTH(name_product) from product;
+</code></pre>
+<h2 id="score-2">Score - 2</h2>
+<h2 id="description_5">Description</h2>
+<pre><code>Вывод длины имён товаров
+</code></pre>
+<h2 id="result_5">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">name_product</th>
+<th align="center">length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Acer Aspire 515-50</td>
+<td align="center">18</td>
+</tr>
+<tr>
+<td align="center">AK-47</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">NIN chokos</td>
+<td align="center">10</td>
+</tr>
+<tr>
+<td align="center">Shipe-1</td>
+<td align="center">7</td>
+</tr>
+</tbody>
+</table>
+<h1 id="request-7">Request 7</h1>
+<pre><code class="language-sql">select name_broker, EXTRACT(YEAR FROM date_of_duration) from contract_BO
+natural join broker;
+</code></pre>
+<h2 id="score-4_2">Score - 4</h2>
+<h2 id="description_6">Description</h2>
+<pre><code>Вывод года истечения контракта между брокером и конторой
+</code></pre>
+<h2 id="result_6">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">name_broker</th>
+<th align="center">date_part</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Jordan Belfort</td>
+<td align="center">2025</td>
+</tr>
+<tr>
+<td align="center">Don Juan</td>
+<td align="center">2035</td>
+</tr>
+<tr>
+<td align="center">Uncle Pihto</td>
+<td align="center">2022</td>
+</tr>
+</tbody>
+</table>
+<h1 id="request-8">Request 8</h1>
+<pre><code class="language-sql">select idbatch from batch_content
+where idproduct = 1 and date_of_receipt &lt; '2021-04-18';
+</code></pre>
+<h2 id="score-2_1">Score - 2</h2>
+<h2 id="description_7">Description</h2>
+<pre><code>Вывод партий с товаром под номером 1, принятым в партию ранее 2021-04-18
+</code></pre>
+<h2 id="result_7">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">idbatch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<h1 id="request-9">Request 9</h1>
+<pre><code class="language-sql">select idbatch from contract_bcb
+where (select EXTRACT(YEAR FROM date_of_conclusion)) = '2021';
+</code></pre>
+<h2 id="score-4_3">Score - 4</h2>
+<h2 id="description_8">Description</h2>
+<pre><code>Вывод партий, проданных в 2021 году
+</code></pre>
+<h2 id="result_8">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">idbatch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">3</td>
+</tr>
+</tbody>
+</table>
+<h1 id="request-10">Request 10</h1>
+<pre><code class="language-sql">select name_batch from batch
+where ASCII(name_batch) = 49 and price_batch &gt; 1000;
+</code></pre>
+<h2 id="score-3">Score - 3</h2>
+<h2 id="description_9">Description</h2>
+<pre><code>Вывод номеров партий, начинающихся на 1 и стоящих более 1000
+</code></pre>
+<h2 id="result_9">Result</h2>
+<table>
+<thead>
+<tr>
+<th align="center">name_batch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">100100221</td>
+</tr>
+<tr>
+<td align="center">100100222</td>
+</tr>
+</tbody>
+</table>
+<h1 id="final-score-45">Final score - 45</h1>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../product/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../product/" class="btn btn-xs btn-link">
+        product
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="">Windmill Dark</a> theme by None (noraj).</p>
+</footer>
+
+</body>
+</html>
