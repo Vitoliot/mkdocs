@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>MongoDB - vitoliot_market</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Model for Mongo", url: "#_top", children: [
+          ]},
+          {title: "Logs", url: "#logs", children: [
+          ]},
+          {title: "Requests", url: "#requests", children: [
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script>
+      <script src="../search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../request10/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../request10/" class="btn btn-xs btn-link">
+        Request 10
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h2 id="model-for-mongo">Model for Mongo</h2>
+<p><img alt="Pict. 2 Infological model" src="../new_model.png" /></p>
+<p><strong><em>Pict. 1 Infological model for Mongo</em></strong></p>
+<h2 id="logs">Logs</h2>
+<pre><code class="language-python">&gt; use market
+switched to db market
+&gt; db.createCollection(&quot;Market&quot;)
+{ &quot;ok&quot; : 1 }
+&gt; db.createCollection(&quot;Batch&quot;)
+{ &quot;ok&quot; : 1 }
+&gt; db.createCollection(&quot;Buy&quot;)
+{ &quot;ok&quot; : 1 }
+&gt; db.Market.insert({'CompanyName' : 'Panayot Viktor Company'})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.Market.insert({'CompanyName' : 'IGIL (banned in Russia)'})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.Market.insert({'CompanyName' : 'Nothing Enc.'})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.Batch.insert({'BatchName' : '100100221', 'Broker' : {'name': 'Jordan Belfort', 
+'succ_perc': 80, 'work_exp': 20}, 'Product' : [{'name': 'Acer Aspire', 'sh_life': 
+Date('2030-03-14'), 'unit' : 'th.', 'proddate': Date('2021-01-10'), 'price': 40000, 
+'qt':10}], 'Pricebatch': 400000, 'ShippedDate': Date('2021-02-10')})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.Batch.insert({'BatchName' : '100100222', 'Broker' : {'name': 'Don Juan', 
+'succ_perc': 100, 'work_exp': 5}, 'Product' : [{'name': 'AK-47', 'sh_life': Date('2050-
+03-14'), 'unit' : 'th.', 'proddate': Date('2000-01-10'), 'price': 10000, 'qt':100}], 
+'Pricebatch': 1000000, 'ShippedDate': Date('2021-02-18')})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.Batch.insert({'BatchName' : '100100223', 'Broker' : {'name': 'Uncle Pihto', 
+'succ_perc': 40, 'work_exp': 60}, 'Product' : [{'name': 'NIN chokos', 'sh_life': 
+Date('2021-06-29'), 'unit' : 'th.', 'proddate': Date('2021-01-10'), 'price': 1000, 
+'qt':1}], 'Pricebatch': 1000, 'ShippedDate': Date('2021-02-15')})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.Buy.insert({'Batch' : new DBRef('Batch', 
+ObjectId(&quot;60a2586fac2211c5603d7f92&quot;)), 'Client': new DBRef('Market', 
+ObjectId(&quot;60a254feac2211c5603d7f8f&quot;)), 'DateofBuy': Date('2021-02-10')})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.Buy.insert({'Batch' : new DBRef('Batch', 
+ObjectId(&quot;60a25922ac2211c5603d7f93&quot;)), 'Client': new DBRef('Market', 
+ObjectId(&quot;60a2551aac2211c5603d7f90&quot;)), 'DateofBuy': Date('2021-03-20')})4
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; db.Buy.insert({'Batch' : new DBRef('Batch', 
+ObjectId(&quot;60a2599eac2211c5603d7f94&quot;)), 'Client': new DBRef('Market', 
+ObjectId(&quot;60a2552aac2211c5603d7f91&quot;)), 'DateofBuy': Date('2021-10-10')})
+WriteResult({ &quot;nInserted&quot; : 1 })
+</code></pre>
+<h2 id="requests">Requests</h2>
+<ol>
+<li>Вывод партий, начинающихся на 1 и стоящих более 1000
+<img alt="Pict. 1" src="../r1.png" /></li>
+<li>
+<p>Вывод партий, проданных в 2021 году
+<img alt="Pict. 2" src="../r2.png" /></p>
+</li>
+<li>
+<p>Вывод товаров, произведенных в 2021 году
+<img alt="Pict. 3" src="../r3.png" /></p>
+</li>
+<li>
+<p>Вывод длины имён брокеров
+<img alt="Pict. 4" src="../r4.png" /></p>
+</li>
+</ol>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav">
+      <a href="../request10/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../request10/" class="btn btn-xs btn-link">
+        Request 10
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="">Windmill Dark</a> theme by None (noraj).</p>
+</footer>
+
+</body>
+</html>
