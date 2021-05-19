@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Request 10 - vitoliot_market</title>
+    <title>PHP interfaces - vitoliot_market</title>
     <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
@@ -32,10 +32,8 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Request 10", url: "#_top", children: [
-              {title: "Score - 3", url: "#score-3" },
-              {title: "Description", url: "#description" },
-              {title: "Result", url: "#result" },
+          {title: "Interfaces", url: "#_top", children: [
+              {title: "Batch", url: "#batch" },
           ]},
         ];
 
@@ -63,20 +61,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../int1/" class="btn btn-xs btn-default pull-right">
+      <a href="../mongo/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../int1/" class="btn btn-xs btn-link">
-        PHP interfaces
+      <a href="../mongo/" class="btn btn-xs btn-link">
+        MongoDB
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../request9/" class="btn btn-xs btn-default pull-left">
+      <a href="../request10/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../request9/" class="btn btn-xs btn-link">
-        Request 9
+        Previous</a><a href="../request10/" class="btn btn-xs btn-link">
+        Request 10
       </a>
     </div>
     
@@ -84,30 +82,25 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="request-10">Request 10</h1>
-<pre><code class="language-sql">select name_batch from batch
-where ASCII(name_batch) = 49 and price_batch &gt; 1000;
-</code></pre>
-<h2 id="score-3">Score - 3</h2>
-<h2 id="description">Description</h2>
-<pre><code>Вывод номеров партий, начинающихся на 1 и стоящих более 1000
-</code></pre>
-<h2 id="result">Result</h2>
-<table>
-<thead>
-<tr>
-<th align="center">name_batch</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">100100221</td>
-</tr>
-<tr>
-<td align="center">100100222</td>
-</tr>
-</tbody>
-</table>
+    <h1 id="interfaces">Interfaces</h1>
+<p>Four blocks of interfaces were implemented. Here is one of them as an example.</p>
+<p>Main Page:</p>
+<p><img alt="Pict. 2" src="../main_page.png" /></p>
+<p>Here you can navigate to the desired interface or view a list of queries</p>
+<h2 id="batch">Batch</h2>
+<p>The interface allows you to view table data, add new data, modify and delete them</p>
+<p>View table data:
+<img alt="Pict. 2" src="../batch_interface.png" /></p>
+<p>Add new data:</p>
+<p><img alt="Pict. 3" src="../batch_incert.png" />
+<img alt="Pict. 4" src="../batch_incert_res.png" /></p>
+<p>Modify:</p>
+<p><img alt="Pict. 5" src="../batch_update.png" />
+<img alt="Pict. 6" src="../batch_update_res.png" /></p>
+<p>Delete:</p>
+<p><img alt="Pict. 7" src="../batch_delete.png" /></p>
+<p>Also here is requests list:
+<img alt="Pict. 8" src="../requests_list.png" /></p>
 
   <br>
     
@@ -120,20 +113,20 @@ where ASCII(name_batch) = 49 and price_batch &gt; 1000;
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../int1/" class="btn btn-xs btn-default pull-right">
+      <a href="../mongo/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../int1/" class="btn btn-xs btn-link">
-        PHP interfaces
+      <a href="../mongo/" class="btn btn-xs btn-link">
+        MongoDB
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../request9/" class="btn btn-xs btn-default pull-left">
+      <a href="../request10/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../request9/" class="btn btn-xs btn-link">
-        Request 9
+        Previous</a><a href="../request10/" class="btn btn-xs btn-link">
+        Request 10
       </a>
     </div>
     
