@@ -38,6 +38,8 @@
           ]},
           {title: "Requests", url: "#requests", children: [
           ]},
+          {title: "MapReduce", url: "#mapreduce", children: [
+          ]},
         ];
 
     </script>
@@ -76,67 +78,31 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h2 id="model-for-mongo">Model for Mongo</h2>
-<p><img alt="Pict. 2 Infological model" src="../new_model.png" /></p>
+<p><img alt="Pict. 1 Infological model" src="../new_model.png" /></p>
 <p><strong><em>Pict. 1 Infological model for Mongo</em></strong></p>
 <h2 id="logs">Logs</h2>
-<pre><code class="language-python">&gt; use market
-switched to db market
-&gt; db.createCollection(&quot;Market&quot;)
-{ &quot;ok&quot; : 1 }
-&gt; db.createCollection(&quot;Batch&quot;)
-{ &quot;ok&quot; : 1 }
-&gt; db.createCollection(&quot;Buy&quot;)
-{ &quot;ok&quot; : 1 }
-&gt; db.Market.insert({'CompanyName' : 'Panayot Viktor Company'})
-WriteResult({ &quot;nInserted&quot; : 1 })
-&gt; db.Market.insert({'CompanyName' : 'IGIL (banned in Russia)'})
-WriteResult({ &quot;nInserted&quot; : 1 })
-&gt; db.Market.insert({'CompanyName' : 'Nothing Enc.'})
-WriteResult({ &quot;nInserted&quot; : 1 })
-&gt; db.Batch.insert({'BatchName' : '100100221', 'Broker' : {'name': 'Jordan Belfort', 
-'succ_perc': 80, 'work_exp': 20}, 'Product' : [{'name': 'Acer Aspire', 'sh_life': 
-Date('2030-03-14'), 'unit' : 'th.', 'proddate': Date('2021-01-10'), 'price': 40000, 
-'qt':10}], 'Pricebatch': 400000, 'ShippedDate': Date('2021-02-10')})
-WriteResult({ &quot;nInserted&quot; : 1 })
-&gt; db.Batch.insert({'BatchName' : '100100222', 'Broker' : {'name': 'Don Juan', 
-'succ_perc': 100, 'work_exp': 5}, 'Product' : [{'name': 'AK-47', 'sh_life': Date('2050-
-03-14'), 'unit' : 'th.', 'proddate': Date('2000-01-10'), 'price': 10000, 'qt':100}], 
-'Pricebatch': 1000000, 'ShippedDate': Date('2021-02-18')})
-WriteResult({ &quot;nInserted&quot; : 1 })
-&gt; db.Batch.insert({'BatchName' : '100100223', 'Broker' : {'name': 'Uncle Pihto', 
-'succ_perc': 40, 'work_exp': 60}, 'Product' : [{'name': 'NIN chokos', 'sh_life': 
-Date('2021-06-29'), 'unit' : 'th.', 'proddate': Date('2021-01-10'), 'price': 1000, 
-'qt':1}], 'Pricebatch': 1000, 'ShippedDate': Date('2021-02-15')})
-WriteResult({ &quot;nInserted&quot; : 1 })
-&gt; db.Buy.insert({'Batch' : new DBRef('Batch', 
-ObjectId(&quot;60a2586fac2211c5603d7f92&quot;)), 'Client': new DBRef('Market', 
-ObjectId(&quot;60a254feac2211c5603d7f8f&quot;)), 'DateofBuy': Date('2021-02-10')})
-WriteResult({ &quot;nInserted&quot; : 1 })
-&gt; db.Buy.insert({'Batch' : new DBRef('Batch', 
-ObjectId(&quot;60a25922ac2211c5603d7f93&quot;)), 'Client': new DBRef('Market', 
-ObjectId(&quot;60a2551aac2211c5603d7f90&quot;)), 'DateofBuy': Date('2021-03-20')})4
-WriteResult({ &quot;nInserted&quot; : 1 })
-&gt; db.Buy.insert({'Batch' : new DBRef('Batch', 
-ObjectId(&quot;60a2599eac2211c5603d7f94&quot;)), 'Client': new DBRef('Market', 
-ObjectId(&quot;60a2552aac2211c5603d7f91&quot;)), 'DateofBuy': Date('2021-10-10')})
-WriteResult({ &quot;nInserted&quot; : 1 })
-</code></pre>
+<p><img alt="Pict. 2" src="../logs.png" /></p>
 <h2 id="requests">Requests</h2>
 <ol>
 <li>Вывод партий, начинающихся на 1 и стоящих более 1000
-<img alt="Pict. 1" src="../r1.png" /></li>
+<img alt="Pict. 3" src="../r1.png" /></li>
 <li>
 <p>Вывод партий, проданных в 2021 году
-<img alt="Pict. 2" src="../r2.png" /></p>
+<img alt="Pict. 4" src="../r2.png" /></p>
 </li>
 <li>
 <p>Вывод товаров, произведенных в 2021 году
-<img alt="Pict. 3" src="../r3.png" /></p>
+<img alt="Pict. 5" src="../r3.png" /></p>
 </li>
 <li>
 <p>Вывод длины имён брокеров
-<img alt="Pict. 4" src="../r4.png" /></p>
+<img alt="Pict. 6" src="../r4.png" /></p>
 </li>
+</ol>
+<h1 id="mapreduce">MapReduce</h1>
+<ol>
+<li>Рассчёт цены партии по её содержимому
+<img alt="Pict. 6" src="../r5.png" /></li>
 </ol>
 
   <br>
